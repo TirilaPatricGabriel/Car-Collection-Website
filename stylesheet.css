@@ -1,0 +1,473 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #1f2020;
+    color: white;
+    scroll-behavior: smooth;
+}
+.container{
+    width: 100%;
+    min-height: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.navbar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    border: black solid 2px;
+    background-color: #000000;
+}
+
+.nav-links{
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul li{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.navbar ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.link-bar{
+    opacity: 0;
+    width: 100%;
+    height: 1px;
+    background-color: yellow;
+    border: 1px white solid;
+    transition-duration: 500ms;
+}
+
+.current-page{
+    opacity: 1;
+} 
+
+ .burger{
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 2px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width:1700px){
+    .navbar{
+        flex-direction: row-reverse;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 7vh;
+        background-color: #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 36%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.parallax-container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+.parallax1{
+    background: url('./img/bmwm4.jpg') no-repeat center;
+}
+.parallax2{
+    background: url('./img/ferrarif8tributo.jpg') no-repeat center;
+}
+.parallax3{
+    background: url('./img/r8.webp') no-repeat center;
+}
+.parallax4{
+    background: url('./img/bmwblack.jpg') no-repeat center;
+}
+.parallax5{
+    background: url('./img/ferrari458.jpg') no-repeat center;
+}
+.parallax6{
+    background: url('./img/lamboaventador.webp') no-repeat center;
+}
+.parallax7{
+    background: url('./img/porsche911.jpg') no-repeat center;
+}
+.parallax8{
+    background: url('./img/redr8.jpg') no-repeat center;
+}
+.parallax9{
+    background: url('./img/astonmartin.jpg') no-repeat center;
+}
+
+.parallax-img{
+    background-size: cover;
+    background-attachment: fixed;
+    height: 800px;
+}
+
+.carousel{
+    width:90%;
+    height:100vh;
+    position: relative;
+    left: 10%;
+}
+
+.carousel > ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 50ms;
+}
+
+.slide > img{
+    display: block;
+    width: 79.3%;
+    height: 80%;
+    object-fit:cover;
+    object-position: center;
+}
+
+.slide[data-active]{
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0;
+}
+
+.carousel-button{
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 40%;
+    transform: translateY(-50%);
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: rgba(0,0,0, .1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.carousel-button:focus {
+    outline: 1px solid black;
+}
+
+.carousel-button.prev {
+    left: 1rem;
+}
+
+.carousel-button.next {
+    right: 21%; 
+}
+
+
+.main-collection{
+    width: 85%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #232526;
+    background: -webkit-linear-gradient(to right, #414345, #232526);
+    background: linear-gradient(to right, #414345, #232526);
+}
+
+#presentation{
+    width: 92%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #232526;
+    background: -webkit-linear-gradient(to right, #414345, #232526);
+    background: linear-gradient(to right, #414345, #232526);
+}
+
+
+/*=============================================================== ABOUT ============================================================*/
+
+#about-us{
+    width: 85%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #232526;
+    background: -webkit-linear-gradient(to right, #414345, #232526);
+    background: linear-gradient(to right, #414345, #232526);
+}
+
+#about-us section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about-header{
+    margin-top: 60px;
+    width: 10%;
+}
+
+#about-bar{
+    width: 60%;
+    background-color: white;
+    height: 1px;
+}
+
+#about-bot{
+    width: 80%;
+}
+#about-bot p{
+    width: 70%;
+}
+
+
+
+
+
+
+#home-container{
+    width: 85%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #232526;
+    background: -webkit-linear-gradient(to right, #414345, #232526);
+    background: linear-gradient(to right, #414345, #232526);
+}
+
+.home-section{
+    width: 80%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+.top-content{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+}
+.middle-content{
+    margin-top: 35px;
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+}
+.bot-content{
+    margin-top: 20px;
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+}
+.top-img-cont{
+    width: 50%;
+    height: 100%;
+}
+.top-img-cont img{
+    width: 100%;
+    object-fit: cover;
+}
+.top-content .desc{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about-section p{
+    width: 70%;
+}
+.mid-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mid-left .desc-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mid-right-img{
+    width: 50%;
+    object-fit: cover;
+}
+.bot-img{
+    width: 75%;
+    object-fit: cover;
+}
+
+/* ============================================================ COLLECTION ==================================================*/
+.grupare{
+    margin: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:90%;
+}
+
+.car{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-image{
+    width: 93%;
+    height: 700px;
+    object-fit: cover;
+}
+
+.drop-down{
+    width: 93%;
+}
+
+.drop-down__button{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #333333;
+    color: white;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.drop-down__button::after{
+    content: '\25be';
+    float: right;
+    transform: scale(1.5);
+}
+
+.drop-down__button--active{
+    background: #555555;
+}
+.drop-down__button--active::after{
+    content: '\25b4';
+}
+
+.drop-down__content{
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s;
+
+    padding: 0 15px;
+    background: #555555;
+}
+
+@media screen and (max-width: 1024px){
+    .grupare{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .grupare .principal{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .paragraf{
+        width: 450px;
+        word-wrap: break-word;
+    }
+    .drop-down__content .content_1 .principal .imagine{
+        margin: auto;
+    }
+}
